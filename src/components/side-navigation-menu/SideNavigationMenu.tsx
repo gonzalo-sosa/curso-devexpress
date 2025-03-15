@@ -1,88 +1,105 @@
-import React, { useEffect, useRef, useCallback, useMemo, useContext } from 'react';
-import { TreeView, TreeViewRef } from 'devextreme-react/tree-view';
-import * as events from 'devextreme/events';
-import { navigation } from '../../app-navigation';
-import { useNavigation } from '../../contexts/navigation';
-import { useScreenSize } from '../../utils/media-query';
-import './SideNavigationMenu.scss';
-import type { SideNavigationMenuProps } from '../../types';
+import { TreeView, type TreeViewRef } from "devextreme-react/tree-view";
+import * as events from "devextreme/events";
+import type React from "react";
+import { useCallback, useContext, useEffect, useMemo, useRef } from "react";
+import { navigation } from "../../app-navigation";
+import { useNavigation } from "../../contexts/navigation";
+import { useScreenSize } from "../../utils/media-query";
+import "./SideNavigationMenu.scss";
+import type { SideNavigationMenuProps } from "../../types";
 
-import { ThemeContext } from '../../theme';
+import { ThemeContext } from "../../theme";
 
-export default function SideNavigationMenu(props: React.PropsWithChildren<SideNavigationMenuProps>) {
-  const {
-    children,
-    selectedItemChanged,
-    openMenu,
-    compactMode,
-    onMenuReady
-  } = props;
+export default function SideNavigationMenu(
+	props: React.PropsWithChildren<SideNavigationMenuProps>,
+) {
+	const { children, selectedItemChanged, openMenu, compactMode, onMenuReady } =
+		props;
 
-  const theme = useContext(ThemeContext);
-  const { isLarge } = useScreenSize();
-  function normalizePath () {
-    return navigation.map((item) => (
-      { ...item, expanded: isLarge, path: item.path && !(/^\//.test(item.path)) ? `/${item.path}` : item.path }
-    ))
-  }
+	const theme = useContext(ThemeContext);
+	const { isLarge } = useScreenSize();
+	function normalizePath() {
+		const paths = [];
+		for (const item of navigation) {
+			if (item)
+				paths.push({
+					...item,
+					expanded: isLarge,
+					path: item.path
+						? !/^\//.test(item.path)
+							? `/${item.path}`
+							: item.path
+						: undefined,
+				});
+		}
 
-  const items = useMemo(
-    normalizePath,
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+		return paths;
+	}
 
-  const { navigationData: { currentPath } } = useNavigation();
+	const items = useMemo(
+		normalizePath,
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[],
+	);
 
-  const treeViewRef = useRef<TreeViewRef>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const getWrapperRef = useCallback((element: HTMLDivElement) => {
-    const prevElement = wrapperRef.current;
-    if (prevElement) {
-      events.off(prevElement, 'dxclick');
-    }
+	const {
+		navigationData: { currentPath },
+	} = useNavigation();
 
-    wrapperRef.current = element;
-    events.on(element, 'dxclick', (e: React.PointerEvent) => {
-      openMenu(e);
-    });
-  }, [openMenu]);
+	const treeViewRef = useRef<TreeViewRef>(null);
+	const wrapperRef = useRef<HTMLDivElement>(null);
+	const getWrapperRef = useCallback(
+		(element: HTMLDivElement) => {
+			const prevElement = wrapperRef.current;
+			if (prevElement) {
+				events.off(prevElement, "dxclick");
+			}
 
-  useEffect(() => {
-    const treeView = treeViewRef.current && treeViewRef.current.instance();
-    if (!treeView) {
-      return;
-    }
+			wrapperRef.current = element;
+			events.on(element, "dxclick", (e: React.PointerEvent) => {
+				openMenu(e);
+			});
+		},
+		[openMenu],
+	);
 
-    if (currentPath !== undefined) {
-      treeView.selectItem(currentPath);
-      treeView.expandItem(currentPath);
-    }
+	useEffect(() => {
+		const treeView = treeViewRef.current && treeViewRef.current.instance();
+		if (!treeView) {
+			return;
+		}
 
-    if (compactMode) {
-      treeView.collapseAll();
-    }
-  }, [currentPath, compactMode]);
+		if (currentPath !== undefined) {
+			treeView.selectItem(currentPath);
+			treeView.expandItem(currentPath);
+		}
 
-  return (
-    <div
-      className={`dx-swatch-additional${theme?.isDark() ? '-dark' : ''} side-navigation-menu`}
-      ref={getWrapperRef}
-    >
-      {children}
-      <div className={'menu-container'}>
-        <TreeView
-          ref={treeViewRef}
-          items={items}
-          keyExpr={'path'}
-          selectionMode={'single'}
-          focusStateEnabled={false}
-          expandEvent={'click'}
-          onItemClick={selectedItemChanged}
-          onContentReady={onMenuReady}
-          width={'100%'}
-        />
-      </div>
-    </div>
-  );
+		if (compactMode) {
+			treeView.collapseAll();
+		}
+	}, [currentPath, compactMode]);
+
+	return (
+		<div
+			className={`dx-swatch-additional${
+				theme?.isDark() ? "-dark" : ""
+			} side-navigation-menu`}
+			ref={getWrapperRef}
+		>
+			{children}
+			<div className={"menu-container"}>
+				<TreeView
+					ref={treeViewRef}
+					items={items}
+					keyExpr={"path"}
+					selectionMode={"single"}
+					focusStateEnabled={false}
+					expandEvent={"click"}
+					onItemClick={selectedItemChanged}
+					onContentReady={onMenuReady}
+					width={"100%"}
+				/>
+			</div>
+		</div>
+	);
 }

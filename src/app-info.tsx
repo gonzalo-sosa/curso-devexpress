@@ -1,5 +1,4 @@
 const appInfo = {
-    title: 'Cra'
+	title: "rsbuild",
 };
 export default appInfo;
-

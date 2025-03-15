@@ -4,6 +4,7 @@
   "private": true,
   "packageManager": "bun@1.2.4",
   "dependencies": {
+    "@aspnet/signalr": "^1.0.27",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
@@ -14,6 +15,9 @@
     "@types/react-dom": "^19.0.4",
     "devextreme": "24.2.5",
     "devextreme-react": "24.2.5",
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
+    "jspdf": "^3.0.0",
     "react": "^19.0.0",
     "react-app-polyfill": "^1.0.0",
     "react-dom": "^19.0.0",
@@ -27,6 +31,7 @@
     "build": "rsbuild build",
     "preview": "rsbuild preview",
     "build-themes": "devextreme build",
+    "add-view": "bunx devextreme add view",
     "postinstall": "bun run build-themes"
   },
   "eslintConfig": {
@@ -51,6 +56,7 @@
     "@rsbuild/core": "^1.2.19",
     "@rsbuild/plugin-react": "^1.1.1",
     "@rsbuild/plugin-sass": "^1.2.2",
+    "@types/file-saver": "^2.0.7",
     "devextreme-cli": "1.9.0",
     "devextreme-themebuilder": "24.2.5"
   }
