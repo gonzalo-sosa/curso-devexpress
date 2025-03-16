@@ -15,7 +15,7 @@ export default () => (
 		<Column dataField="Address" />
 		<Column dataField="HomePhone" />
 		<Column dataField="PostalCode" />
-		<Column dataField="Country" groupIndex={0} />
+		<Column dataField="Country" groupIndex={0}></Column>
 		<GroupPanel visible={true} />
 	</DataGrid>
 );

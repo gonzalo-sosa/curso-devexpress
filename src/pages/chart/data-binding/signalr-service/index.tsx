@@ -116,8 +116,8 @@ export default () => {
 					>
 						<Aggregation enabled={true} method="sum" />
 					</Series>
-					<Pane name="Price" />
-					<Pane name="Volume" height={80} />
+					<Pane name="Price"></Pane>
+					<Pane name="Volume" height={80}></Pane>
 					<Legend visible={false} />
 					<ArgumentAxis
 						argumentType="datetime"

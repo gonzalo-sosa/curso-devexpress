@@ -9,8 +9,6 @@ export default function Home() {
 				<div className={"dx-card responsive-paddings"}>
 					<div className={"logos-container"}>
 						<svg
-							role="img"
-							aria-label="DevExtreme logo"
 							className={"devextreme-logo"}
 							width={"255"}
 							height={"60"}
@@ -202,8 +200,6 @@ export default function Home() {
 							</defs>
 						</svg>
 						<svg
-							role="img"
-							aria-label="Plus"
 							className={"plus"}
 							width={"22"}
 							height={"22"}
@@ -226,8 +222,6 @@ export default function Home() {
 							</defs>
 						</svg>
 						<svg
-							role="img"
-							aria-label="React logo"
 							className={"react-logo"}
 							viewBox={"0 0 184 62"}
 							xmlns={"http://www.w3.org/2000/svg"}

@@ -1,6 +1,5 @@
 import React from "react";
 import "./datagrid.scss";
-import Section from "src/components/section";
 import Basic from "./components/basic";
 import CustomizeToolbar from "./components/customize-toolbar";
 import DisplaySummaries from "./components/display-summaries";
@@ -23,51 +22,62 @@ export default function PageDataGrid() {
 			<h2>Datagrid</h2>
 			<div className={"content-block"}>
 				<div className={"dx-card responsive-paddings"}>
-					<Section title="Overview">
+					<div>
+						<h3>Overview</h3>
 						<Overview />
-					</Section>
-					<Section title="Basic">
-						<Basic />
-					</Section>
-					<Section title="Reorder">
+					</div>
+					<div>
+						<h3>Reorder</h3>
 						<Reorder />
-					</Section>
-					<Section title="Resize Columns">
+					</div>
+					<div>
+						<h3>Resize Columns</h3>
 						<Resize />
-					</Section>
-					<Section title="Fix Columns">
+					</div>
+					<div>
+						<h3>Fix Columns</h3>
 						<Fix />
-					</Section>
-					<Section title="Hide Columns">
+					</div>
+					<div>
+						<h3>Hide Columns</h3>
 						<Hide />
-					</Section>
-					<Section title="Sort Data">
+					</div>
+					<div>
+						<h3>Sort Data</h3>
 						<Sort />
-					</Section>
-					<Section title="Filter and Search Data">
+					</div>
+					<div>
+						<h3>Filter and Search Data</h3>
 						<FilterAndSearch />
-					</Section>
-					<Section title="Group Data">
+					</div>
+					<div>
+						<h3>Group Data</h3>
 						<Group />
-					</Section>
-					<Section title="Edit and Validate Data">
+					</div>
+					<div>
+						<h3>Edit and Validate Data</h3>
 						<EditAndValidate />
-					</Section>
-					<Section title="Select Records">
+					</div>
+					<div>
+						<h3>Select Records</h3>
 						<SelectRecords />
-					</Section>
-					<Section title="Display Summaries">
+					</div>
+					<div>
+						<h3>Display Summaries</h3>
 						<DisplaySummaries />
-					</Section>
-					<Section title="Customize the Toolbar">
+					</div>
+					<div>
+						<h3>Customize the Toolbar</h3>
 						<CustomizeToolbar />
-					</Section>
-					<Section title="Configure Master-Detail Interface">
+					</div>
+					<div>
+						<h3>Configure Master-Detail Interface</h3>
 						<MasterDetail />
-					</Section>
-					<Section title="Export Data">
+					</div>
+					<div>
+						<h3>Export Data</h3>
 						<Export />
-					</Section>
+					</div>
 				</div>
 			</div>
 		</React.Fragment>

@@ -8,4 +8,4 @@ const employee = {
 	hireDate: new Date(2012, 4, 13),
 };
 
-export default () => <Form formData={employee} />;
+export default () => <Form formData={employee}></Form>;

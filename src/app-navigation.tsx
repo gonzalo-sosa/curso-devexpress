@@ -23,21 +23,25 @@ export const navigation = [
     path: "/about",
     icon: "info",
   },
+  ,
   {
     text: "Chart",
     path: "/chart",
     icon: "chart",
   },
+  ,
   {
     text: "Datagrid",
     path: "/datagrid",
     icon: "dataarea",
   },
+  ,
   {
     text: "Form",
     path: "/form",
     icon: "textdocument",
   },
+  ,
   {
     text: "File Uploader",
     path: "/file-uploader",

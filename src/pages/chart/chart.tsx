@@ -1,6 +1,5 @@
 import React from "react";
 import "./chart.scss";
-import Section from "src/components/section";
 import ClientSideDataProcessing from "./data-binding/client-side-data-processing";
 import DynamicSeriesDataSource from "./data-binding/dynamic-series-data-source";
 import JsonData from "./data-binding/json-data";
@@ -16,10 +15,12 @@ export default function () {
 			<h2>Chart</h2>
 			<div className={"content-block"}>
 				<div className={"dx-card responsive-paddings"}>
-					<Section title="Overview">
+					<div>
+						<h3>Overview</h3>
 						<Overview />
-					</Section>
-					<Section title="Data Binding">
+					</div>
+					<div>
+						<h3>Data Binding</h3>
 						<div>
 							<h4>Simple Array</h4>
 							<SimpleArray />
@@ -48,7 +49,7 @@ export default function () {
 							<h4>Load Data On Demand</h4>
 							<LoadDataOnDemand />
 						</div>
-					</Section>
+					</div>
 				</div>
 			</div>
 		</React.Fragment>

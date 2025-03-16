@@ -21,8 +21,8 @@ function toggleTheme(prevTheme: string) {
 		themeClassNamePrefix + newTheme,
 	);
 
-	const additionalClassNamePrefix = `${themeClassNamePrefix}additional`;
-	const additionalClassNamePostfix = isCurrentThemeDark ? `-${prevTheme}` : "";
+	const additionalClassNamePrefix = themeClassNamePrefix + "additional";
+	const additionalClassNamePostfix = isCurrentThemeDark ? "-" + prevTheme : "";
 	const additionalClassName = `${additionalClassNamePrefix}${additionalClassNamePostfix}`;
 
 	document.body
