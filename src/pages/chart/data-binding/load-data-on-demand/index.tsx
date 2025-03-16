@@ -15,6 +15,7 @@ import {
 } from "devextreme-react/chart";
 import DataSource from "devextreme/data/data_source";
 import { useId, useState } from "react";
+import { FunctionBody, FunctionDeclaration } from "typescript";
 
 const HALFDAY = 43200000;
 let packetsLock = 0;
@@ -90,7 +91,17 @@ export default () => {
 	);
 };
 
-const uploadDataByVisualRange = (visualRange, component) => {
+const uploadDataByVisualRange = (
+	visualRange: { startValue: Date; endValue: Date },
+	component: {
+		getDataSource: () => {
+			items: () => any[];
+			store: () => any;
+			reload: () => void;
+		};
+		showLoadingIndicator: () => void;
+	},
+) => {
 	const dataSource = component.getDataSource();
 	const storage = dataSource.items();
 	const ajaxArgs = {
@@ -137,7 +148,17 @@ const uploadDataByVisualRange = (visualRange, component) => {
 	}
 };
 
-const onVisualRangeChanged = (visualRange, component) => {
+const onVisualRangeChanged = (
+	visualRange: { startValue: Date; endValue: Date },
+	component: {
+		getDataSource: () => {
+			items: () => any[];
+			store: () => any;
+			reload: () => void;
+		};
+		showLoadingIndicator: () => void;
+	},
+) => {
 	const items = component.getDataSource().items();
 	if (
 		!items.length ||
