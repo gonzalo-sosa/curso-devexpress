@@ -8,9 +8,9 @@ export default function Section({
 	children: ReactNode;
 }) {
 	return (
-		<div>
+		<section>
 			<h3>{title}</h3>
 			{children}
-		</div>
+		</section>
 	);
 }
