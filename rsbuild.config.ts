@@ -32,4 +32,7 @@ export default defineConfig({
     template: "public/index.html",
   },
   plugins: [pluginReact(), pluginDevextreme(), pluginSass()],
+  dev: {
+    lazyCompilation: true,
+  },
 });

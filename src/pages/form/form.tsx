@@ -10,53 +10,46 @@ import OrganizeItems from "./components/organize-items";
 import Submit from "./components/submit";
 import Tabs from "./components/tabs";
 import Validation from "./components/validation";
+import Section from "src/components/section";
 
-export default () => (
-	<React.Fragment>
-		<h2>Form</h2>
-		<div className={"content-block"}>
-			<div className={"dx-card responsive-paddings"}>
-				<div>
-					<h3>Basic</h3>
-					<Basic />
-				</div>
-				<div>
-					<h3>Items</h3>
-					<Items />
-				</div>
-				<div>
-					<h3>Organize Items</h3>
-					<OrganizeItems />
-				</div>
-				<div>
-					<h3>Group</h3>
-					<Group />
-				</div>
-				<div>
-					<h3>Tabs</h3>
-					<Tabs />
-				</div>
-				<div>
-					<h3>Empty Space</h3>
-					<EmptySpace />
-				</div>
-				<div>
-					<h3>Item Labels</h3>
-					<ItemLabels />
-				</div>
-				<div>
-					<h3>Modify in Runtime</h3>
-					<ModifyInRuntime />
-				</div>
-				<div>
-					<h3>Validation</h3>
-					<Validation />
-				</div>
-				<div>
-					<h3>Submit</h3>
-					<Submit />
-				</div>
-			</div>
-		</div>
-	</React.Fragment>
-);
+export default function Form() {
+  return (
+    <>
+      <h2>Form</h2>
+      <div className={"content-block"}>
+        <div className={"dx-card responsive-paddings"}>
+          <Section title="Basic">
+            <Basic />
+          </Section>
+          <Section title="Items">
+            <Items />
+          </Section>
+          <Section title="Organize Items">
+            <OrganizeItems />
+          </Section>
+          <Section title="Group">
+            <Group />
+          </Section>
+          <Section title="Tabs">
+            <Tabs />
+          </Section>
+          <Section title="Empty Space">
+            <EmptySpace />
+          </Section>
+          <Section title="Item Labels">
+            <ItemLabels />
+          </Section>
+          <Section title="Modify in Runtime">
+            <ModifyInRuntime />
+          </Section>
+          <Section title="Validation">
+            <Validation />
+          </Section>
+          <Section title="Submit">
+            <Submit />
+          </Section>
+        </div>
+      </div>
+    </>
+  );
+}
