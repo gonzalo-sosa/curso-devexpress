@@ -21,7 +21,7 @@
     "react": "^19.0.0",
     "react-app-polyfill": "^1.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "6",
     "sass": "^1.34.1",
     "typescript": "^4.9.5",
     "web-vitals": "^4.2.4"
@@ -32,7 +32,12 @@
     "preview": "rsbuild preview",
     "build-themes": "devextreme build",
     "add-view": "bunx devextreme add view",
-    "postinstall": "bun run build-themes"
+    "lint": "biome lint",
+    "lint:fix": "biome lint --fix",
+    "format": "biome format",
+    "format:fix": "biome format --fix",
+    "check": "biome check",
+    "check:fix": "biome check --fix"
   },
   "eslintConfig": {
     "extends": [
