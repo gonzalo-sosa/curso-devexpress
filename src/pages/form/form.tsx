@@ -1,5 +1,6 @@
 import React from "react";
 import "./form.scss";
+import Section from "src/components/section";
 import Basic from "./components/basic";
 import EmptySpace from "./components/empty-space";
 import Group from "./components/group";
@@ -16,46 +17,36 @@ export default () => (
 		<h2>Form</h2>
 		<div className={"content-block"}>
 			<div className={"dx-card responsive-paddings"}>
-				<div>
-					<h3>Basic</h3>
+				<Section title="Basic">
 					<Basic />
-				</div>
-				<div>
-					<h3>Items</h3>
+				</Section>
+				<Section title="Items">
 					<Items />
-				</div>
-				<div>
-					<h3>Organize Items</h3>
+				</Section>
+				<Section title="Organize Items">
 					<OrganizeItems />
-				</div>
-				<div>
-					<h3>Group</h3>
+				</Section>
+				<Section title="Group">
 					<Group />
-				</div>
-				<div>
-					<h3>Tabs</h3>
+				</Section>
+				<Section title="Tabs">
 					<Tabs />
-				</div>
-				<div>
-					<h3>Empty Space</h3>
+				</Section>
+				<Section title="Empty Space">
 					<EmptySpace />
-				</div>
-				<div>
-					<h3>Item Labels</h3>
+				</Section>
+				<Section title="Item Labels">
 					<ItemLabels />
-				</div>
-				<div>
-					<h3>Modify in Runtime</h3>
+				</Section>
+				<Section title="Modify in Runtime">
 					<ModifyInRuntime />
-				</div>
-				<div>
-					<h3>Validation</h3>
+				</Section>
+				<Section title="Validation">
 					<Validation />
-				</div>
-				<div>
-					<h3>Submit</h3>
+				</Section>
+				<Section title="Submit">
 					<Submit />
-				</div>
+				</Section>
 			</div>
 		</div>
 	</React.Fragment>

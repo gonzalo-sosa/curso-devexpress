@@ -32,7 +32,13 @@
     "preview": "rsbuild preview",
     "build-themes": "devextreme build",
     "add-view": "bunx devextreme add view",
-    "postinstall": "bun run build-themes"
+    "postinstall": "bun run build-themes",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --fix",
+    "format": "biome format",
+    "format:fix": "biome format --fix",
+    "check": "biome check",
+    "check:fix": "biome check --fix"
   },
   "eslintConfig": {
     "extends": [
