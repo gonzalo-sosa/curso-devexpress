@@ -5,6 +5,7 @@
   "packageManager": "bun@1.2.4",
   "dependencies": {
     "@aspnet/signalr": "^1.0.27",
+    "@mui/base": "^5.0.0-beta.69",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",

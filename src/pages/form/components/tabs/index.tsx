@@ -20,26 +20,28 @@ const employee = {
 	notes: "John has been in the Audio/Video industry since 1990.",
 };
 
-export default () => (
-	<Form formData={employee} colCount={2}>
-		<GroupItem caption="Employee">
-			<SimpleItem dataField="name" />
-			<SimpleItem dataField="position" />
-			<SimpleItem dataField="hireDate" />
-			<SimpleItem dataField="officeNumber" />
-		</GroupItem>
-		<GroupItem caption="Personal Information">
-			<TabbedItem>
-				<TabPanelOptions height={260} />
-				<Tab title="Contacts">
-					<SimpleItem dataField="phone" />
-					<SimpleItem dataField="skype" />
-					<SimpleItem dataField="email" />
-				</Tab>
-				<Tab title="Note">
-					<SimpleItem dataField="notes" />
-				</Tab>
-			</TabbedItem>
-		</GroupItem>
-	</Form>
-);
+export default function Tabs() {
+	return (
+		<Form formData={employee} colCount={2}>
+			<GroupItem caption="Employee">
+				<SimpleItem dataField="name" />
+				<SimpleItem dataField="position" />
+				<SimpleItem dataField="hireDate" />
+				<SimpleItem dataField="officeNumber" />
+			</GroupItem>
+			<GroupItem caption="Personal Information">
+				<TabbedItem>
+					<TabPanelOptions height={260} />
+					<Tab title="Contacts">
+						<SimpleItem dataField="phone" />
+						<SimpleItem dataField="skype" />
+						<SimpleItem dataField="email" />
+					</Tab>
+					<Tab title="Note">
+						<SimpleItem dataField="notes" />
+					</Tab>
+				</TabbedItem>
+			</GroupItem>
+		</Form>
+	);
+}

@@ -46,33 +46,35 @@ function changeTemperature(e: SelectBoxTypes.ValueChangedEvent) {
 	monthWeather.load();
 }
 
-export default () => (
-	<>
-		{monthWeather && (
-			<Chart
-				title="Temperature in Seattle: October 2017"
-				dataSource={monthWeather}
-				customizePoint={customizePoint}
-			>
-				<Size height={420} />
-				<ValueAxis>
-					<Label customizeText={customizeLabel} />
-				</ValueAxis>
-				<Series argumentField="day" valueField="t" type="bar" />
-				<Legend visible={false} />
-				<Export enabled={true} />
-				<LoadingIndicator enabled={true} />
-			</Chart>
-		)}
-		<div className="action">
-			<div className="label">Choose a temperature threshold, &deg;C:</div>
-			<SelectBox
-				id="choose-temperature"
-				dataSource={temperature}
-				inputAttr={temperatureLabel}
-				defaultValue={2}
-				onValueChanged={changeTemperature}
-			/>
-		</div>
-	</>
-);
+export default function ClientSideDataProcessing() {
+	return (
+		<>
+			{monthWeather && (
+				<Chart
+					title="Temperature in Seattle: October 2017"
+					dataSource={monthWeather}
+					customizePoint={customizePoint}
+				>
+					<Size height={420} />
+					<ValueAxis>
+						<Label customizeText={customizeLabel} />
+					</ValueAxis>
+					<Series argumentField="day" valueField="t" type="bar" />
+					<Legend visible={false} />
+					<Export enabled={true} />
+					<LoadingIndicator enabled={true} />
+				</Chart>
+			)}
+			<div className="action">
+				<div className="label">Choose a temperature threshold, &deg;C:</div>
+				<SelectBox
+					id="choose-temperature"
+					dataSource={temperature}
+					inputAttr={temperatureLabel}
+					defaultValue={2}
+					onValueChanged={changeTemperature}
+				/>
+			</div>
+		</>
+	);
+}

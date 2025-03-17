@@ -11,10 +11,12 @@ const employee = {
 const hireDateOptions = {
 	disabled: true,
 };
-export default () => (
-	<Form formData={employee}>
-		<SimpleItem dataField="name" />
-		<SimpleItem dataField="officeNumber" />
-		<SimpleItem dataField="hireDate" editorOptions={hireDateOptions} />
-	</Form>
-);
+export default function Items() {
+	return (
+		<Form formData={employee}>
+			<SimpleItem dataField="name" />
+			<SimpleItem dataField="officeNumber" />
+			<SimpleItem dataField="hireDate" editorOptions={hireDateOptions} />
+		</Form>
+	);
+}

@@ -8,7 +8,7 @@ export default () => (
     allowColumnReordering={true}
   >
     <Column dataField="FullName" />
-    <Column dataField="Position" />
+    <Column dataField="Position" groupIndex={1} />
     <Column dataField="BirthDate" dataType="date" />
     <Column dataField="HireDate" dataType="date" />
     <Column dataField="City" />

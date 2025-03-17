@@ -30,7 +30,7 @@ const wholeRange = {
 	endValue: new Date(2017, 11, 31),
 };
 
-export default () => {
+export default function LoadDataOnDemand() {
 	const id = useId();
 
 	const [visualRange, setVisualRange] = useState({
@@ -88,7 +88,7 @@ export default () => {
 			<Legend visible={false} />
 		</Chart>
 	);
-};
+}
 
 const uploadDataByVisualRange = (visualRange, component) => {
 	const dataSource = component.getDataSource();

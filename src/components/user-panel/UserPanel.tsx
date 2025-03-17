@@ -7,50 +7,50 @@ import "./UserPanel.scss";
 import type { UserPanelProps } from "../../types";
 
 export default function UserPanel({ menuMode }: UserPanelProps) {
-  const { signOut } = useAuth();
-  const navigate = useNavigate();
+	const { signOut } = useAuth();
+	const navigate = useNavigate();
 
-  const navigateToProfile = useCallback(() => {
-    navigate("/profile");
-  }, [navigate]);
+	const navigateToProfile = useCallback(() => {
+		navigate("/profile");
+	}, [navigate]);
 
-  const menuItems = useMemo(
-    () => [
-      {
-        text: "Profile",
-        icon: "user",
-        onClick: navigateToProfile,
-      },
-      {
-        text: "Logout",
-        icon: "runner",
-        onClick: signOut,
-      },
-    ],
-    [navigateToProfile, signOut]
-  );
+	const menuItems = useMemo(
+		() => [
+			{
+				text: "Profile",
+				icon: "user",
+				onClick: navigateToProfile,
+			},
+			{
+				text: "Logout",
+				icon: "runner",
+				onClick: signOut,
+			},
+		],
+		[navigateToProfile, signOut],
+	);
 
-  const dropDownButtonAttributes = {
-    class: "user-button",
-  };
+	const dropDownButtonAttributes = {
+		class: "user-button",
+	};
 
-  const buttonDropDownOptions = {
-    width: "150px",
-  };
+	const buttonDropDownOptions = {
+		width: "150px",
+	};
 
-  return (
-    <div className="user-panel">
-      {menuMode === "context" && (
-        <DropDownButton
-          stylingMode="text"
-          icon="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png"
-          showArrowIcon={false}
-          elementAttr={dropDownButtonAttributes}
-          dropDownOptions={buttonDropDownOptions}
-          items={menuItems}
-        />
-      )}
-      {menuMode === "list" && <List items={menuItems} />}
-    </div>
-  );
+	return (
+		<div className="user-panel">
+			{menuMode === "context" && (
+				<DropDownButton
+					stylingMode="text"
+					icon="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png"
+					showArrowIcon={false}
+					elementAttr={dropDownButtonAttributes}
+					dropDownOptions={buttonDropDownOptions}
+					items={menuItems}
+				/>
+			)}
+			{menuMode === "list" && <List items={menuItems} />}
+		</div>
+	);
 }

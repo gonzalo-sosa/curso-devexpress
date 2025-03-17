@@ -26,19 +26,21 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 	e.preventDefault();
 };
 
-export default () => (
-	<form action={"/"} onSubmit={handleSubmit}>
-		<Form formData={employee} colCount={2}>
-			<GroupItem caption="Personal Information" colCount={2}>
-				<SimpleItem dataField="name" isRequired={true} />
-				<SimpleItem dataField="officeNumber">
-					<NumericRule />
-				</SimpleItem>
-				<SimpleItem dataField="email">
-					<EmailRule />
-				</SimpleItem>
-			</GroupItem>
-			<ButtonItem buttonOptions={submitButtonOptions} />
-		</Form>
-	</form>
-);
+export default function Submit() {
+	return (
+		<form action={"/"} onSubmit={handleSubmit}>
+			<Form formData={employee} colCount={2}>
+				<GroupItem caption="Personal Information" colCount={2}>
+					<SimpleItem dataField="name" isRequired={true} />
+					<SimpleItem dataField="officeNumber">
+						<NumericRule />
+					</SimpleItem>
+					<SimpleItem dataField="email">
+						<EmailRule />
+					</SimpleItem>
+				</GroupItem>
+				<ButtonItem buttonOptions={submitButtonOptions} />
+			</Form>
+		</form>
+	);
+}

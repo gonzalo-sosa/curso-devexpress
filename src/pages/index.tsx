@@ -6,3 +6,5 @@ export { default as ChartPage } from "./chart/chart";
 export { default as DatagridPage } from "./datagrid/datagrid";
 export { default as FormPage } from "./form/form";
 export { default as FileUploaderPage } from "./file-uploader/file-uploader";
+export { default as MuiPage } from "./mui/mui";
+export { default as MuiPage } from "./mui/mui";

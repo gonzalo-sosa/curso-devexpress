@@ -7,7 +7,7 @@ import Chart, {
 import { useId } from "react";
 import { populationData } from "./data";
 
-export default () => {
+export default function SimpleArray() {
 	const id = useId();
 	return (
 		<Chart
@@ -25,4 +25,4 @@ export default () => {
 			<Legend visible={false} />
 		</Chart>
 	);
-};
+}

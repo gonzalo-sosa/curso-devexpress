@@ -14,7 +14,7 @@ const employee = {
 	notes: "John has been in the Audio/Video industry since 1990.",
 };
 
-export default () => {
+export default function ModifyInRuntime() {
 	const [isFormDisabled, setIsFormDisabled] = useState(false);
 
 	const onCheckBoxValueChanged = useCallback((e: ValueChangedEvent) => {
@@ -38,4 +38,4 @@ export default () => {
 			/>
 		</div>
 	);
-};
+}

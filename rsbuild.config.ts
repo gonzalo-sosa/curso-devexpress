@@ -5,34 +5,34 @@ import { pluginSass } from "@rsbuild/plugin-sass";
 import devextreme from "./devextreme.json";
 
 const pluginDevextreme = (): RsbuildPlugin => ({
-  name: "build-themes",
-  setup(api) {
-    api.onBeforeBuild(() => {
-      const {
-        build: { commands },
-      } = devextreme;
+	name: "build-themes",
+	setup(api) {
+		api.onBeforeBuild(() => {
+			const {
+				build: { commands },
+			} = devextreme;
 
-      commands.forEach((cmd) => {
-        const { command, options } = cmd;
-        const { inputFile, outputFile } = options;
+			commands.forEach((cmd) => {
+				const { command, options } = cmd;
+				const { inputFile, outputFile } = options;
 
-        execSync(
-          `bunx devextreme ${command} --inputFile ${inputFile} --outputFile ${outputFile}`,
-          { stdio: "inherit" }
-        );
-      });
-    });
-  },
-  // Asegurar que los temas se generen ANTES de procesar SASS
-  post: ["rsbuild:sass"],
+				execSync(
+					`bunx devextreme ${command} --inputFile ${inputFile} --outputFile ${outputFile}`,
+					{ stdio: "inherit" },
+				);
+			});
+		});
+	},
+	// Asegurar que los temas se generen ANTES de procesar SASS
+	post: ["rsbuild:sass"],
 });
 
 export default defineConfig({
-  html: {
-    template: "public/index.html",
-  },
-  plugins: [pluginReact(), pluginDevextreme(), pluginSass()],
-  dev: {
-    lazyCompilation: true,
-  },
+	html: {
+		template: "public/index.html",
+	},
+	plugins: [pluginReact(), pluginDevextreme(), pluginSass()],
+	dev: {
+		lazyCompilation: true,
+	},
 });

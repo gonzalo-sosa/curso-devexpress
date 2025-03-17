@@ -14,34 +14,34 @@ import { ThemeContext, useThemeContext } from "./theme";
 import { useScreenSizeClass } from "./utils/media-query";
 
 function App() {
-  const { user, loading } = useAuth();
+	const { user, loading } = useAuth();
 
-  if (loading) {
-    return <LoadPanel visible={true} />;
-  }
+	if (loading) {
+		return <LoadPanel visible={true} />;
+	}
 
-  if (user) {
-    return <Content />;
-  }
+	if (user) {
+		return <Content />;
+	}
 
-  return <UnauthenticatedContent />;
+	return <UnauthenticatedContent />;
 }
 
 export default function Root() {
-  const screenSizeClass = useScreenSizeClass();
-  const themeContext = useThemeContext();
+	const screenSizeClass = useScreenSizeClass();
+	const themeContext = useThemeContext();
 
-  return (
-    <Router future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
-      <ThemeContext.Provider value={themeContext}>
-        <AuthProvider>
-          <NavigationProvider>
-            <div className={`app ${screenSizeClass}`}>
-              <App />
-            </div>
-          </NavigationProvider>
-        </AuthProvider>
-      </ThemeContext.Provider>
-    </Router>
-  );
+	return (
+		<Router future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
+			<ThemeContext.Provider value={themeContext}>
+				<AuthProvider>
+					<NavigationProvider>
+						<div className={`app ${screenSizeClass}`}>
+							<App />
+						</div>
+					</NavigationProvider>
+				</AuthProvider>
+			</ThemeContext.Provider>
+		</Router>
+	);
 }

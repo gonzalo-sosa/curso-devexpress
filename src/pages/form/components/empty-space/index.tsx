@@ -13,15 +13,17 @@ const employee = {
 	notes: "John has been in the Audio/Video industry since 1990.",
 };
 
-export default () => (
-	<Form formData={employee} colCount={2}>
-		<SimpleItem dataField="name" />
-		<SimpleItem dataField="position" />
-		<SimpleItem dataField="hireDate" />
-		<SimpleItem dataField="officeNumber" />
-		<EmptyItem colSpan={2} />
-		<SimpleItem dataField="phone" />
-		<SimpleItem dataField="skype" />
-		<SimpleItem dataField="email" />
-	</Form>
-);
+export default function EmptySpace() {
+	return (
+		<Form formData={employee} colCount={2}>
+			<SimpleItem dataField="name" />
+			<SimpleItem dataField="position" />
+			<SimpleItem dataField="hireDate" />
+			<SimpleItem dataField="officeNumber" />
+			<EmptyItem colSpan={2} />
+			<SimpleItem dataField="phone" />
+			<SimpleItem dataField="skype" />
+			<SimpleItem dataField="email" />
+		</Form>
+	);
+}

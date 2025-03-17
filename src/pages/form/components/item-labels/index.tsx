@@ -13,14 +13,16 @@ const employee = {
 	notes: "John has been in the Audio/Video industry since 1990.",
 };
 
-export default () => (
-	<Form formData={employee} colCount={2} labelLocation="top">
-		<SimpleItem dataField="name" />
-		<SimpleItem dataField="position" />
-		<SimpleItem dataField="hireDate" />
-		<SimpleItem dataField="officeNumber" />
-		<SimpleItem dataField="notes" colSpan={2}>
-			<Label alignment="center" />
-		</SimpleItem>
-	</Form>
-);
+export default function ItemLabels() {
+	return (
+		<Form formData={employee} colCount={2} labelLocation="top">
+			<SimpleItem dataField="name" />
+			<SimpleItem dataField="position" />
+			<SimpleItem dataField="hireDate" />
+			<SimpleItem dataField="officeNumber" />
+			<SimpleItem dataField="notes" colSpan={2}>
+				<Label alignment="center" />
+			</SimpleItem>
+		</Form>
+	);
+}

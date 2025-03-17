@@ -17,7 +17,7 @@ const customizeSeries: ISeriesTemplateProps["customizeSeries"] = (
 		? { type: "line", label: { visible: true }, color: "#ff3f7a" }
 		: {};
 
-export default () => {
+export default function DynamicSeriesDataProcessing() {
 	const id = useId();
 	return (
 		<Chart
@@ -39,4 +39,4 @@ export default () => {
 			<Export enabled={true} />
 		</Chart>
 	);
-};
+}

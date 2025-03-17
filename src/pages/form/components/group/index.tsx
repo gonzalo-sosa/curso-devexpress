@@ -12,18 +12,20 @@ const employee = {
 	email: "jheart@dx-email.com",
 };
 
-export default () => (
-	<Form formData={employee} colCount={2}>
-		<GroupItem caption="Personal Information">
-			<SimpleItem dataField="name" />
-			<SimpleItem dataField="position" />
-			<SimpleItem dataField="hireDate" />
-			<SimpleItem dataField="officeNumber" />
-		</GroupItem>
-		<GroupItem caption="Contacts">
-			<SimpleItem dataField="phone" />
-			<SimpleItem dataField="skype" />
-			<SimpleItem dataField="email" />
-		</GroupItem>
-	</Form>
-);
+export default function Group() {
+	return (
+		<Form formData={employee} colCount={2}>
+			<GroupItem caption="Personal Information">
+				<SimpleItem dataField="name" />
+				<SimpleItem dataField="position" />
+				<SimpleItem dataField="hireDate" />
+				<SimpleItem dataField="officeNumber" />
+			</GroupItem>
+			<GroupItem caption="Contacts">
+				<SimpleItem dataField="phone" />
+				<SimpleItem dataField="skype" />
+				<SimpleItem dataField="email" />
+			</GroupItem>
+		</Form>
+	);
+}

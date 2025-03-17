@@ -47,39 +47,41 @@ function customizeTooltip(arg: { valueText: string }) {
 	};
 }
 
-export default () => (
-	<>
-		<Chart title="Temperature in Seattle , 2017" dataSource={chartDataSource}>
-			<Size height={420} />
-			<ValueAxis valueType="numeric">
-				<Grid opacity={0.2} />
-				<Label customizeText={customizeLabel} />
-			</ValueAxis>
-			<ArgumentAxis type="discrete">
-				<Grid visible={true} opacity={0.5} />
-			</ArgumentAxis>
-			<CommonPaneSettings>
-				<Border visible={true} width={2} top={false} right={false} />
-			</CommonPaneSettings>
-			<Series argumentField="Number" valueField="Temperature" type="spline" />
-			<Legend visible={false} />
-			<Export enabled={true} />
-			<Tooltip enabled={true} customizeTooltip={customizeTooltip} />
-			<LoadingIndicator enabled={true} />
-		</Chart>
+export default function ServerSideDataProcessing() {
+	return (
+		<>
+			<Chart title="Temperature in Seattle , 2017" dataSource={chartDataSource}>
+				<Size height={420} />
+				<ValueAxis valueType="numeric">
+					<Grid opacity={0.2} />
+					<Label customizeText={customizeLabel} />
+				</ValueAxis>
+				<ArgumentAxis type="discrete">
+					<Grid visible={true} opacity={0.5} />
+				</ArgumentAxis>
+				<CommonPaneSettings>
+					<Border visible={true} width={2} top={false} right={false} />
+				</CommonPaneSettings>
+				<Series argumentField="Number" valueField="Temperature" type="spline" />
+				<Legend visible={false} />
+				<Export enabled={true} />
+				<Tooltip enabled={true} customizeTooltip={customizeTooltip} />
+				<LoadingIndicator enabled={true} />
+			</Chart>
 
-		<div className="action">
-			<div className="label">Choose a month:</div>
-			<SelectBox
-				id="selectbox"
-				width={150}
-				valueExpr="id"
-				inputAttr={monthLabel}
-				displayExpr="name"
-				items={months}
-				defaultValue={1}
-				onValueChanged={onValueChanged}
-			/>
-		</div>
-	</>
-);
+			<div className="action">
+				<div className="label">Choose a month:</div>
+				<SelectBox
+					id="selectbox"
+					width={150}
+					valueExpr="id"
+					inputAttr={monthLabel}
+					displayExpr="name"
+					items={months}
+					defaultValue={1}
+					onValueChanged={onValueChanged}
+				/>
+			</div>
+		</>
+	);
+}
