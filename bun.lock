@@ -15,6 +15,7 @@
         "@types/react": "^19.0.10",
         "@types/react-dom": "^19.0.4",
         "devextreme": "24.2.5",
+        "devextreme-aspnet-data-nojquery": "^5.0.0",
         "devextreme-react": "24.2.5",
         "exceljs": "^4.4.0",
         "file-saver": "^2.0.5",
@@ -305,6 +306,8 @@
     "devexpress-gantt": ["devexpress-gantt@4.1.57", "", { "dependencies": { "@devexpress/utils": "^1.4.3", "tslib": "2.3.1" } }, "sha512-UMtPo9O7B+PZfyHTR5L/dVaQkcjUhjCKfhi6NrfnvjXW7+sjisvm5LhKd+AIXhjv9IlMbfGyutfUcH5VF1wxyQ=="],
 
     "devextreme": ["devextreme@24.2.5", "", { "dependencies": { "@babel/runtime": "^7.12.1", "@devextreme/runtime": "3.0.13", "devexpress-diagram": "2.2.15", "devexpress-gantt": "4.1.57", "devextreme-quill": "1.7.2", "inferno": "^7.4.9", "inferno-hydrate": "^7.4.9", "jszip": "^3.10.1", "rrule": "^2.7.1" }, "bin": { "devextreme-bundler": "bin/bundler.js", "devextreme-bundler-init": "bin/bundler-init.js" } }, "sha512-qCYC3zgmBnyQLuxGsSnIX1TtmMD+Om96P6yO8NLpZpsaFjFFwrqq51A66YjqsoKXP0Re3Q735A2sJptahhbynA=="],
+
+    "devextreme-aspnet-data-nojquery": ["devextreme-aspnet-data-nojquery@5.0.0", "", { "peerDependencies": { "devextreme": ">=18.1.0" } }, "sha512-WC1JBUocjD7lxy2bMFlUTF0Z3GCUNYveucgarERJ85SO+h7czqAyYwnYCJT845Vyabfw5Ta9mOJ0y0fB/wWzwA=="],
 
     "devextreme-cli": ["devextreme-cli@1.9.0", "", { "dependencies": { "@yarnpkg/lockfile": "^1.1.0", "import-cwd": "^3.0.0", "less": "3.13.1", "minimist": "^1.2.8", "mustache": "^3.2.1", "prompts": "^2.4.2", "sass": "^1.85.1", "semver": "^5.7.2", "strip-bom": "^4.0.0" }, "bin": { "devextreme": "index.js" } }, "sha512-ySjeukkOS0wrkEw4lFtjdLYaqzGFLFqlzuVPBL8ENZYNB5y7j/RXeFnimndNk5NwQ0LBsq8wT0llMACGRoYR8Q=="],
 

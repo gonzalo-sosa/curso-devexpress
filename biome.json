@@ -8,7 +8,13 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["*.json", "src/themes/generated/*"]
+		"ignore": [
+			"node_modules",
+			"public",
+			"dist",
+			"*.json",
+			"src/themes/generated/*"
+		]
 	},
 	"formatter": {
 		"enabled": true,
